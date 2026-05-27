@@ -1,0 +1,40 @@
+---
+import { marked } from 'marked';
+
+const { paragraph, allFootnotes } = Astro.props;
+
+// Render markdown inline for paragraph content
+let contentHtml = await marked.parseInline(paragraph.content);
+
+// Replace [^N] with linked footnote references that include a hover popup
+contentHtml = contentHtml.replace(/\[\^(\d+)\]/g, (match, id) => {
+  const fn = allFootnotes.find((f) => f.id == id);
+  let popupHtml = '';
+  if (fn) {
+    // Use marked to render the footnote content, then strip outer <p> if present for compact popup
+    const rendered = marked.parseInline(fn.content);
+    popupHtml = `<span class="footnote-popup">${rendered}</span>`;
+  }
+  return `<a href="#footnote-${id}" class="footnote-ref">${match}${popupHtml}</a>`;
+});
+
+const hasEnrichment = paragraph.enrichment && Object.keys(paragraph.enrichment).length > 0;
+---
+
+<div class="paragraph-row" id={`para-${paragraph.number}`}>
+  <div class="paragraph-main">
+    <p class="paragraph-text">
+      <span class="para-number">{paragraph.number}.</span>
+      <span set:html={contentHtml} />
+    </p>
+  </div>
+  <div class="paragraph-enrichment">
+    <div class="enrichment-card">
+      {hasEnrichment ? (
+        <div set:html={marked.parseInline(JSON.stringify(paragraph.enrichment))} />
+      ) : (
+        <span class="enrichment-placeholder">Summary will appear here.</span>
+      )}
+    </div>
+  </div>
+</div>

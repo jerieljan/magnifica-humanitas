@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getFootnotes, getFootnoteBacklinks } from '../lib/data.js';
+import { marked } from 'marked';
+
+const footnotes = getFootnotes();
+const backlinks = getFootnoteBacklinks();
+---
+
+<Layout title="Footnotes">
+  <div class="footnotes-list">
+    <h1>Footnotes</h1>
+    <p style="color: var(--color-muted); margin-bottom: 2rem;">
+      {footnotes.length} notes recovered from the encyclical.
+    </p>
+
+    {footnotes.map((fn) => (
+      <div class="footnote-item" id={`footnote-${fn.id}`} style="margin-bottom: 1.5rem;">
+        <span class="fn-id" style="font-size: 1rem;">{fn.id}.</span>
+        <div>
+          <span set:html={marked.parseInline(fn.content)} />
+          {backlinks[fn.id] && (
+            <div class="backlinks">
+              Referenced in:{" "}
+              {backlinks[fn.id].map((link, i) => (
+                <span>
+                  <a href={`/${link.sectionSlug}#para-${link.paragraphNumber}`}>
+                    §{link.paragraphNumber} ({link.sectionTitle})
+                  </a>
+                  {i < backlinks[fn.id].length - 1 ? ", " : ""}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</Layout>

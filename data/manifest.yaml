@@ -25,7 +25,7 @@ sections:
       - title: Remaining human
         slug: remaining-human
         paragraph_range: [15, 16]
-  - title: CHAPTER ONE: A DYNAMIC APPROACH FAITHFUL TO THE GOSPEL
+  - title: "CHAPTER ONE: A DYNAMIC APPROACH FAITHFUL TO THE GOSPEL"
     slug: chapter-one-a-dynamic-approach-faithful-to-the-gospel
     file: chapter-one-a-dynamic-approach-faithful-to-the-gospel.yaml
     order: 2
@@ -49,7 +49,7 @@ sections:
       - title: Interpreting history in the light of faith
         slug: interpreting-history-in-the-light-of-faith
         paragraph_range: [45, 45]
-  - title: CHAPTER TWO: FOUNDATIONS AND PRINCIPLES OF THE SOCIAL DOCTRINE OF THE CHURCH
+  - title: "CHAPTER TWO: FOUNDATIONS AND PRINCIPLES OF THE SOCIAL DOCTRINE OF THE CHURCH"
     slug: chapter-two-foundations-and-principles-of-the-social-doctrine-of-the-church
     file: chapter-two-foundations-and-principles-of-the-social-doctrine-of-the-church.yaml
     order: 3
@@ -58,7 +58,7 @@ sections:
       - title: The foundations of Social Doctrine
         slug: the-foundations-of-social-doctrine
         paragraph_range: [46, 47]
-      - title: The human person: image of the Triune God
+      - title: "The human person: image of the Triune God"
         slug: the-human-person-image-of-the-triune-god
         paragraph_range: [48, 50]
       - title: The equal dignity of all human beings
@@ -91,7 +91,7 @@ sections:
       - title: An examen for the Church
         slug: an-examen-for-the-church
         paragraph_range: [86, 89]
-  - title: CHAPTER THREE: TECHNOLOGY AND DOMINANCE.
+  - title: "CHAPTER THREE: TECHNOLOGY AND DOMINANCE."
     slug: chapter-three-technology-and-dominance
     file: chapter-three-technology-and-dominance.yaml
     order: 4
@@ -115,7 +115,7 @@ sections:
       - title: What must not be lost
         slug: what-must-not-be-lost
         paragraph_range: [112, 114]
-      - title: Underlying narratives: transhumanism and posthumanism
+      - title: "Underlying narratives: transhumanism and posthumanism"
         slug: underlying-narratives-transhumanism-and-posthumanism
         paragraph_range: [115, 117]
       - title: The limit, the heart and the grandeur of the human person
@@ -127,7 +127,7 @@ sections:
       - title: Two cities and two loves
         slug: two-cities-and-two-loves
         paragraph_range: [129, 130]
-  - title: CHAPTER FOUR: SAFEGUARDING HUMANITY AT A TIME OF TRANSFORMATION.
+  - title: "CHAPTER FOUR: SAFEGUARDING HUMANITY AT A TIME OF TRANSFORMATION."
     slug: chapter-four-safeguarding-humanity-at-a-time-of-transformation
     file: chapter-four-safeguarding-humanity-at-a-time-of-transformation.yaml
     order: 5
@@ -166,7 +166,7 @@ sections:
       - title: An economy that values dignity
         slug: an-economy-that-values-dignity
         paragraph_range: [157, 164]
-      - title: Families and young people: the social conditions for hope
+      - title: "Families and young people: the social conditions for hope"
         slug: families-and-young-people-the-social-conditions-for-hope
         paragraph_range: [165, 169]
       - title: Protecting freedom against dependencies and commercialization
@@ -181,7 +181,7 @@ sections:
       - title: A shared responsibility
         slug: a-shared-responsibility
         paragraph_range: [180, 181]
-  - title: CHAPTER FIVE: THE CULTURE OF POWER AND THE CIVILIZATION OF LOVE
+  - title: "CHAPTER FIVE: THE CULTURE OF POWER AND THE CIVILIZATION OF LOVE"
     slug: chapter-five-the-culture-of-power-and-the-civilization-of-love
     file: chapter-five-the-culture-of-power-and-the-civilization-of-love.yaml
     order: 6
@@ -250,6 +250,6 @@ sections:
       - title: The construction site of our time
         slug: the-construction-site-of-our-time
         paragraph_range: [236, 242]
-      - title: The song of hope: the Magnificat
+      - title: "The song of hope: the Magnificat"
         slug: the-song-of-hope-the-magnificat
         paragraph_range: [243, 245]

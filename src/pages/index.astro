@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getManifest } from '../lib/data.js';
+
+const manifest = getManifest();
+---
+
+<Layout>
+  <div style="text-align:center; padding: 4rem 2rem; max-width: 600px; margin: 0 auto;">
+    <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">{manifest.meta.title}</h1>
+    <p style="font-size:1.25rem; color: var(--color-muted); margin-bottom: 2rem; font-family: var(--font-serif); font-style: italic;">
+      {manifest.meta.subtitle}
+    </p>
+    <p style="margin-bottom: 3rem; color: var(--color-muted);">
+      {manifest.meta.author} — {manifest.meta.date}
+    </p>
+    <a
+      href="/introduction"
+      style="display:inline-block; padding: 0.75rem 1.5rem; background: var(--color-accent); color: white; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 1rem;"
+    >
+      Start Reading
+    </a>
+  </div>
+</Layout>

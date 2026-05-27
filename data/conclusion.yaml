@@ -90,7 +90,7 @@ blocks:
     enrichment: {}
   - type: subheading
     level: 3
-    title: The song of hope: the Magnificat
+    title: "The song of hope: the Magnificat"
     slug: the-song-of-hope-the-magnificat
   - type: paragraph
     number: 243

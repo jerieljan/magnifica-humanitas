@@ -44,7 +44,7 @@ def write_yaml_string(value):
         lines = value.splitlines()
         indented = lines[0] + "\n" + "\n".join("      " + l for l in lines[1:])
         return f'"{indented.replace("\\", "\\\\").replace('"', '\\"')}"'
-    if re.match(r"^[a-zA-Z0-9_\s.,;:!?()'-]+$", value) and not value.startswith(("*", "#", "[", "{", "|", ">", "'", '"')):
+    if re.match(r"^[a-zA-Z0-9_\s.,;:!?()'-]+$", value) and ": " not in value and not value.startswith(("*", "#", "[", "{", "|", ">", "'", '"')):
         return value
     escaped = value.replace("\\", "\\\\").replace('"', '\\"')
     return f'"{escaped}"'

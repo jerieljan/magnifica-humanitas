@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ParagraphRow from '../components/ParagraphRow.astro';
+import { getManifest, getSection, getFootnotes } from '../lib/data.js';
+import { marked } from 'marked';
+
+export function getStaticPaths() {
+  const manifest = getManifest();
+  return manifest.sections.map((s) => ({ params: { section: s.slug } }));
+}
+
+const { section } = Astro.params;
+const data = getSection(section);
+const footnotes = getFootnotes();
+
+if (!data) {
+  throw new Error(`Section not found: ${section}`);
+}
+
+const sectionFootnoteIds = [
+  ...new Set(
+    data.blocks
+      .filter((b) => b.type === 'paragraph')
+      .flatMap((b) => b.footnote_refs || [])
+  ),
+];
+const sectionFootnotes = footnotes.filter((f) => sectionFootnoteIds.includes(f.id));
+---
+
+<Layout title={data.title}>
+  <article>
+    {data.blocks.map((block) => (
+      <>
+        {block.type === 'heading' && (
+          <div class="article-header">
+            <h1 id={block.slug || block.title}>{block.title}</h1>
+          </div>
+        )}
+        {block.type === 'subheading' && (
+          <h2 id={block.slug || `sub-${block.title}`}>{block.title}</h2>
+        )}
+        {block.type === 'paragraph' && (
+          <ParagraphRow paragraph={block} allFootnotes={footnotes} />
+        )}
+        {block.type === 'text' && (
+          <div class="text-block" set:html={marked.parseInline(block.content)} />
+        )}
+      </>
+    ))}
+
+    {sectionFootnotes.length > 0 && (
+      <div class="section-footnotes">
+        <h3>Footnotes</h3>
+        {sectionFootnotes.map((fn) => (
+          <div class="footnote-item" id={`footnote-${fn.id}`}>
+            <span class="fn-id">{fn.id}.</span>
+            <span set:html={marked.parseInline(fn.content)} />
+          </div>
+        ))}
+      </div>
+    )}
+  </article>
+</Layout>

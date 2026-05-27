@@ -1,0 +1,105 @@
+---
+import '../styles/global.css';
+import { getManifest } from '../lib/data.js';
+import Sidebar from '../components/Sidebar.astro';
+
+const { title } = Astro.props;
+const manifest = getManifest();
+const pageTitle = title ? `${title} — ${manifest.meta.title}` : manifest.meta.title;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{pageTitle}</title>
+  <style>
+    /* Inline critical layout styles to avoid FOUC */
+    .page-container {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+    @media (max-width: 1024px) {
+      .page-container { grid-template-columns: 1fr; padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <aside class="sidebar">
+      <Sidebar />
+    </aside>
+    <main class="main-content">
+      <slot />
+    </main>
+  </div>
+
+  {/* Mobile FAB */}
+  <button class="mobile-fab" id="mobile-fab" aria-label="Show paragraph summary">☰</button>
+
+  {/* Mobile Drawer Backdrop */}
+  <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop"></div>
+
+  {/* Mobile Drawer */}
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div id="mobile-drawer-content">
+      <p class="enrichment-placeholder">Select a paragraph to see its summary.</p>
+    </div>
+  </div>
+
+  <script>
+    // Mobile drawer toggle
+    const fab = document.getElementById('mobile-fab');
+    const drawer = document.getElementById('mobile-drawer');
+    const backdrop = document.getElementById('mobile-drawer-backdrop');
+    let drawerOpen = false;
+
+    function toggleDrawer() {
+      drawerOpen = !drawerOpen;
+      drawer.classList.toggle('open', drawerOpen);
+      backdrop.classList.toggle('open', drawerOpen);
+    }
+
+    fab.addEventListener('click', toggleDrawer);
+    backdrop.addEventListener('click', toggleDrawer);
+
+    // IntersectionObserver to update active paragraph in sidebar and mobile drawer
+    const observerOptions = { rootMargin: '-20% 0px -60% 0px', threshold: 0 };
+    const paragraphs = document.querySelectorAll('.paragraph-row');
+    const sidebarParaLinks = document.querySelectorAll('.sidebar-nav .paragraph-grid a');
+    const drawerContent = document.getElementById('mobile-drawer-content');
+
+    let activeId = null;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          activeId = entry.target.id;
+          // Update sidebar
+          sidebarParaLinks.forEach((a) => {
+            a.classList.toggle('active-para', a.getAttribute('href') === '#' + activeId);
+          });
+          // Update mobile drawer
+          const enrichment = entry.target.querySelector('.enrichment-card');
+          if (drawerContent && enrichment) {
+            drawerContent.innerHTML = enrichment.innerHTML;
+            const num = entry.target.querySelector('.para-number')?.textContent || '';
+            const pre = document.createElement('div');
+            pre.style.cssText = 'font-weight:700;color:#2c3e50;margin-bottom:0.5rem;font-size:0.85rem;';
+            pre.textContent = 'Paragraph ' + num.replace('.', '');
+            drawerContent.prepend(pre);
+          }
+        }
+      });
+    }, observerOptions);
+
+    paragraphs.forEach((p) => observer.observe(p));
+  </script>
+</body>
+</html>

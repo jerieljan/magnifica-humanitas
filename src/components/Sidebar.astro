@@ -1,0 +1,58 @@
+---
+import { getManifest, getSection } from '../lib/data.js';
+
+const manifest = getManifest();
+const currentPath = Astro.url.pathname;
+const currentSlug = currentPath.replace(/^\/|\/index\.html$|\/+$/g, '');
+
+// If we're on a section page, load its paragraphs for the sidebar navigator
+let currentParagraphs = [];
+if (currentSlug && currentSlug !== 'footnotes') {
+  const section = getSection(currentSlug);
+  if (section) {
+    currentParagraphs = section.blocks
+      .filter((b) => b.type === 'paragraph')
+      .map((b) => b.number);
+  }
+}
+---
+
+<nav class="sidebar-nav">
+  <div class="sidebar-header">
+    <a href="/">{manifest.meta.title}</a>
+    <p>{manifest.meta.subtitle}</p>
+  </div>
+
+  <ul>
+    {manifest.sections.map((sec) => {
+      const isActive = currentSlug === sec.slug;
+      return (
+        <li>
+          <a href={`/${sec.slug}`} class={isActive ? 'active' : ''}>
+            {sec.title}
+          </a>
+          {isActive && sec.subsections && sec.subsections.length > 0 && (
+            <ul>
+              {sec.subsections.map((sub) => (
+                <li class="subsection">
+                  <a href={`#${sub.slug}`}>{sub.title}</a>
+                </li>
+              ))}
+            </ul>
+          )}
+          {isActive && currentParagraphs.length > 0 && (
+            <div class="paragraph-grid">
+              {currentParagraphs.map((num) => (
+                <a href={`#para-${num}`} title={`Paragraph ${num}`}>{num}</a>
+              ))}
+            </div>
+          )}
+        </li>
+      );
+    })}
+  </ul>
+
+  <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--color-border);">
+    <a href="/footnotes" style="font-size: 0.85rem;">All Footnotes</a>
+  </div>
+</nav>

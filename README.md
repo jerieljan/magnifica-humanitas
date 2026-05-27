@@ -51,6 +51,10 @@ Footnotes were renumbered sequentially (Option B) to match the order of first ap
 
 The `enrichment:` field on every paragraph is intentionally left empty. It is designed for future data such as AI-generated summaries, commentary, keywords, or cross-references that can be rendered in a right-hand annotation pane.
 
+## Source
+
+This text is sourced from the [Vatican website](https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html), published on 15 May 2026.
+
 ## Credits
 
 - AI icon by [humbleicons](https://github.com/zraly/humbleicons) (MIT License)

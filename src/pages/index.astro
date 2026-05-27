@@ -3,6 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import { getManifest } from '../lib/data.js';
 
 const manifest = getManifest();
+const rawDate = manifest.meta.date;
+const isoStr = rawDate instanceof Date ? rawDate.toISOString().slice(0, 10) : String(rawDate);
+const [year, month, day] = isoStr.split('-');
+const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const formattedDate = `${monthNames[parseInt(month, 10) - 1]} ${parseInt(day, 10)}, ${year}`;
 ---
 
 <Layout>
@@ -11,8 +16,11 @@ const manifest = getManifest();
     <p style="font-size:1.25rem; color: var(--color-muted); margin-bottom: 2rem; font-family: var(--font-serif); font-style: italic;">
       {manifest.meta.subtitle}
     </p>
-    <p style="margin-bottom: 3rem; color: var(--color-muted);">
-      {manifest.meta.author} — {manifest.meta.date}
+    <p style="margin-bottom: 0.5rem; color: var(--color-muted);">
+      {manifest.meta.author} — {formattedDate}
+    </p>
+    <p style="margin-bottom: 3rem; color: var(--color-muted); font-size: 0.9rem;">
+      <a href={manifest.meta.source} target="_blank" rel="noopener noreferrer" style="color: var(--color-accent);">Source ↗</a>
     </p>
     <a
       href="/introduction"

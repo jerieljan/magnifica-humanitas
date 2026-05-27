@@ -59,17 +59,17 @@ const pageTitle = title ? `${title} — ${manifest.meta.title}` : manifest.meta.
   </div>
 
   <div class="page-container">
-    <div class="mobile-summary-panel" id="mobile-summary-panel">
-      <div id="mobile-summary-content">
-        <p class="enrichment-placeholder">Select a paragraph to see its summary.</p>
-      </div>
-    </div>
     <aside class="sidebar">
       <Sidebar />
     </aside>
     <main class="main-content" id="main-content">
       <slot />
     </main>
+    <div class="mobile-summary-panel" id="mobile-summary-panel">
+      <div id="mobile-summary-content">
+        <p class="enrichment-placeholder">Select a paragraph to see its summary.</p>
+      </div>
+    </div>
   </div>
 
   <script>

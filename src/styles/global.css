@@ -462,8 +462,6 @@ a:hover {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease;
-  position: sticky;
-  top: 56px;
   z-index: 105;
 }
 
@@ -592,6 +590,17 @@ body {
 
   .mobile-summary-panel {
     display: block;
+    position: fixed;
+    bottom: 48px;
+    left: 0;
+    right: 0;
+    border-bottom: none;
+    border-top: 1px solid var(--color-border);
+    pointer-events: none;
+  }
+
+  .mobile-summary-panel.open {
+    pointer-events: auto;
   }
 }
 

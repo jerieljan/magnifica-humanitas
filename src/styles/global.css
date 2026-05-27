@@ -194,12 +194,16 @@ a:hover {
 
 .paragraph-row {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-columns: 1fr;
   gap: 2rem;
   margin-bottom: var(--paragraph-gap);
   padding-bottom: var(--paragraph-gap);
   border-bottom: 1px solid var(--color-border);
   align-items: start;
+}
+
+.main-content.enrichments-visible .paragraph-row {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
 }
 
 .paragraph-row:last-child {
@@ -283,6 +287,11 @@ a:hover {
   font-family: var(--font-sans);
   font-size: 0.9rem;
   line-height: 1.65;
+  display: none;
+}
+
+.main-content.enrichments-visible .paragraph-enrichment {
+  display: block;
 }
 
 .enrichment-card {
@@ -291,6 +300,16 @@ a:hover {
   padding: 1rem;
   min-height: 80px;
   background: var(--color-light);
+}
+
+.enrichment-disclosure {
+  display: flex;
+  align-items: center;
+  color: var(--color-muted);
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+  cursor: help;
 }
 
 .enrichment-placeholder {
@@ -482,6 +501,126 @@ a:hover {
   font-size: 0.9rem;
 }
 
+/* Desktop Enrichment Toggle */
+.desktop-enrichment-toggle {
+  display: none;
+  position: fixed;
+  bottom: 60px;
+  right: 2rem;
+  z-index: 102;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-accent);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  backdrop-filter: blur(8px);
+  transition: all 0.15s ease;
+}
+
+.desktop-enrichment-toggle:hover {
+  background: var(--color-light);
+}
+
+.desktop-enrichment-toggle.active {
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+}
+
+/* AI Disclosure Trigger */
+.ai-disclosure-trigger {
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* AI Disclosure Modal */
+.ai-disclosure-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 200;
+}
+
+.ai-disclosure-backdrop.open {
+  display: block;
+}
+
+.ai-disclosure-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(90vw, 360px);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  z-index: 210;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.ai-disclosure-modal.open {
+  display: block;
+}
+
+.ai-disclosure-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  color: var(--color-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.ai-disclosure-close:hover {
+  background: var(--color-light);
+  color: var(--color-text);
+}
+
+.ai-disclosure-icon {
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: center;
+}
+
+.ai-disclosure-content h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  color: var(--color-accent);
+}
+
+.ai-disclosure-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+  margin: 0;
+}
+
 /* Paragraph Scrubber */
 .paragraph-scrubber {
   position: fixed;
@@ -580,12 +719,14 @@ body {
     display: block;
   }
 
-  .paragraph-row {
+  .paragraph-row,
+  .main-content.enrichments-visible .paragraph-row {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
 
-  .paragraph-enrichment {
+  .paragraph-enrichment,
+  .main-content.enrichments-visible .paragraph-enrichment {
     display: none;
   }
 
@@ -606,6 +747,12 @@ body {
 
   .mobile-summary-panel.open {
     pointer-events: auto;
+  }
+}
+
+@media (min-width: 1025px) {
+  .desktop-enrichment-toggle {
+    display: flex;
   }
 }
 

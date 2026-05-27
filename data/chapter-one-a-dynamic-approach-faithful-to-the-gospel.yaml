@@ -20,7 +20,7 @@ blocks:
     footnote_refs: []
     enrichment: "Before examining specific teachings, we must understand how the Church relates to the world. The Church walks alongside humanity rather than imposing rules from above."
   - type: subheading
-    level: 3
+    level: 2
     title: A Church journeying through human history
     slug: a-church-journeying-through-human-history
   - type: paragraph
@@ -82,7 +82,7 @@ blocks:
     footnote_refs: []
     enrichment: "The author now turns to tracing how Social Doctrine developed from the nineteenth century onward. He will highlight key points showing continuity with earlier teachings."
   - type: subheading
-    level: 3
+    level: 2
     title: "The first stages of the Church’s Social Doctrine"
     slug: the-first-stages-of-the-churchs-social-doctrine
   - type: paragraph
@@ -128,7 +128,7 @@ blocks:
     footnote_refs: [33, 34]
     enrichment: "Paul VI applied Church teaching to postindustrial challenges, showing the Gospel remains relevant today. He urged Christians to judge economic and political structures that exclude people from dignity."
   - type: subheading
-    level: 3
+    level: 2
     title: The recent Magisterium
     slug: the-recent-magisterium
   - type: paragraph
@@ -172,7 +172,7 @@ blocks:
     footnote_refs: [49, 50]
     enrichment: "In Fratelli Tutti, Francis called for social friendship and a better politics serving everyone. He linked these social efforts to a personal love for Christ shown through love for others."
   - type: subheading
-    level: 3
+    level: 2
     title: Interpreting history in the light of faith
     slug: interpreting-history-in-the-light-of-faith
   - type: paragraph

@@ -10,7 +10,7 @@ blocks:
     level: 2
     title: Safeguarding Humanity at a Time of Transformation.
   - type: subheading
-    level: 3
+    level: 2
     title: Truth, Work, Freedom
     slug: truth-work-freedom
   - type: paragraph
@@ -19,7 +19,7 @@ blocks:
     footnote_refs: []
     enrichment: "We must focus on how technology changes daily life, especially in truth, work, and freedom."
   - type: subheading
-    level: 3
+    level: 2
     title: Truth as a common good
     slug: truth-as-a-common-good
   - type: subheading
@@ -123,7 +123,7 @@ blocks:
     footnote_refs: []
     enrichment: "Families, schools, and communities must ally to teach moderation, responsibility, and trust."
   - type: subheading
-    level: 3
+    level: 2
     title: The dignity of work at a time of digital transition
     slug: the-dignity-of-work-at-a-time-of-digital-transition
   - type: subheading
@@ -253,7 +253,7 @@ blocks:
     footnote_refs: []
     enrichment: "Policies must support stable jobs, healthy living, accessible education, and strong social ties."
   - type: subheading
-    level: 3
+    level: 2
     title: Protecting freedom against dependencies and commercialization
     slug: protecting-freedom-against-dependencies-and-commercialization
   - type: subheading
@@ -315,7 +315,7 @@ blocks:
     footnote_refs: []
     enrichment: "We need transparent supply chains, ethical business checks, and platform cooperation to stop exploitation."
   - type: subheading
-    level: 3
+    level: 2
     title: A shared responsibility
     slug: a-shared-responsibility
   - type: paragraph

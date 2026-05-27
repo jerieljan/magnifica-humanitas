@@ -16,15 +16,19 @@ sections:
       - title: The res novae of our time
         slug: the-res-novae-of-our-time
         paragraph_range: [4, 6]
+        level: 2
       - title: Two biblical images
         slug: two-biblical-images
         paragraph_range: [7, 10]
+        level: 2
       - title: Building for the common good
         slug: building-for-the-common-good
         paragraph_range: [11, 14]
+        level: 2
       - title: Remaining human
         slug: remaining-human
         paragraph_range: [15, 16]
+        level: 2
   - title: "Chapter One: A Dynamic Approach Faithful to the Gospel"
     slug: chapter-one-a-dynamic-approach-faithful-to-the-gospel
     file: chapter-one-a-dynamic-approach-faithful-to-the-gospel.yaml
@@ -34,21 +38,27 @@ sections:
       - title: A Church journeying through human history
         slug: a-church-journeying-through-human-history
         paragraph_range: [19, 22]
+        level: 2
       - title: The wisdom of the word of God in dialogue with the human sciences
         slug: the-wisdom-of-the-word-of-god-in-dialogue-with-the-human-sciences
         paragraph_range: [23, 24]
+        level: 3
       - title: Social Doctrine as a shared discernment
         slug: social-doctrine-as-a-shared-discernment
         paragraph_range: [25, 28]
+        level: 3
       - title: "The first stages of the Church’s Social Doctrine"
         slug: the-first-stages-of-the-churchs-social-doctrine
         paragraph_range: [29, 36]
+        level: 2
       - title: The recent Magisterium
         slug: the-recent-magisterium
         paragraph_range: [37, 44]
+        level: 2
       - title: Interpreting history in the light of faith
         slug: interpreting-history-in-the-light-of-faith
         paragraph_range: [45, 45]
+        level: 2
   - title: "Chapter Two: Foundations and Principles of the Social Doctrine of the Church"
     slug: chapter-two-foundations-and-principles-of-the-social-doctrine-of-the-church
     file: chapter-two-foundations-and-principles-of-the-social-doctrine-of-the-church.yaml
@@ -58,39 +68,51 @@ sections:
       - title: The foundations of Social Doctrine
         slug: the-foundations-of-social-doctrine
         paragraph_range: [46, 47]
+        level: 2
       - title: "The human person: image of the Triune God"
         slug: the-human-person-image-of-the-triune-god
         paragraph_range: [48, 50]
+        level: 3
       - title: The equal dignity of all human beings
         slug: the-equal-dignity-of-all-human-beings
         paragraph_range: [51, 53]
+        level: 3
       - title: The supreme value of human rights
         slug: the-supreme-value-of-human-rights
         paragraph_range: [54, 58]
+        level: 3
       - title: The principles of Social Doctrine
         slug: the-principles-of-social-doctrine
         paragraph_range: [46, 58]
+        level: 2
       - title: The principle of the common good
         slug: the-principle-of-the-common-good
         paragraph_range: [59, 64]
+        level: 3
       - title: The principle of the universal destination of goods
         slug: the-principle-of-the-universal-destination-of-goods
         paragraph_range: [65, 67]
+        level: 3
       - title: The principle of subsidiarity
         slug: the-principle-of-subsidiarity
         paragraph_range: [68, 72]
+        level: 3
       - title: The principle of solidarity
         slug: the-principle-of-solidarity
         paragraph_range: [73, 76]
+        level: 3
       - title: The principle of social justice
         slug: the-principle-of-social-justice
         paragraph_range: [77, 81]
+        level: 3
       - title: Integral human development
         slug: integral-human-development
         paragraph_range: [82, 85]
+        level: 2
       - title: An examen for the Church
         slug: an-examen-for-the-church
         paragraph_range: [86, 89]
+        level: 2
   - title: "Chapter Three: Technology and Dominance."
     slug: chapter-three-technology-and-dominance
     file: chapter-three-technology-and-dominance.yaml
@@ -100,33 +122,43 @@ sections:
       - title: The Grandeur of Humanity in Light of the Promises of AI
         slug: the-grandeur-of-humanity-in-light-of-the-promises-of-ai
         paragraph_range: [90, 91]
+        level: 2
       - title: The technocratic paradigm and digital power
         slug: the-technocratic-paradigm-and-digital-power
         paragraph_range: [92, 96]
+        level: 2
       - title: Artificial intelligence
         slug: artificial-intelligence
         paragraph_range: [97, 99]
+        level: 2
       - title: A valuable tool that requires vigilance
         slug: a-valuable-tool-that-requires-vigilance
         paragraph_range: [100, 101]
+        level: 3
       - title: R esponsibility, transparency and the governance of AI
         slug: r-esponsibility-transparency-and-the-governance-of-ai
         paragraph_range: [102, 111]
+        level: 3
       - title: What must not be lost
         slug: what-must-not-be-lost
         paragraph_range: [112, 114]
+        level: 2
       - title: "Underlying narratives: transhumanism and posthumanism"
         slug: underlying-narratives-transhumanism-and-posthumanism
         paragraph_range: [115, 117]
+        level: 3
       - title: The limit, the heart and the grandeur of the human person
         slug: the-limit-the-heart-and-the-grandeur-of-the-human-person
         paragraph_range: [118, 126]
+        level: 3
       - title: "The authentic “more than human”: grace and Christian humanism"
         slug: the-authentic-more-than-human-grace-and-christian-humanism
         paragraph_range: [127, 128]
+        level: 2
       - title: Two cities and two loves
         slug: two-cities-and-two-loves
         paragraph_range: [129, 130]
+        level: 2
   - title: "Chapter Four: Safeguarding Humanity at a Time of Transformation."
     slug: chapter-four-safeguarding-humanity-at-a-time-of-transformation
     file: chapter-four-safeguarding-humanity-at-a-time-of-transformation.yaml
@@ -136,51 +168,67 @@ sections:
       - title: Truth, Work, Freedom
         slug: truth-work-freedom
         paragraph_range: [131, 131]
+        level: 2
       - title: Truth as a common good
         slug: truth-as-a-common-good
         paragraph_range: [131, 131]
+        level: 2
       - title: Truth and democracy
         slug: truth-and-democracy
         paragraph_range: [132, 134]
+        level: 3
       - title: Communication and the collective imagination
         slug: communication-and-the-collective-imagination
         paragraph_range: [135, 136]
+        level: 3
       - title: Toward an ecology of communication
         slug: toward-an-ecology-of-communication
         paragraph_range: [137, 138]
+        level: 3
       - title: An educational alliance for the digital age
         slug: an-educational-alliance-for-the-digital-age
         paragraph_range: [139, 142]
+        level: 3
       - title: The central role of schools
         slug: the-central-role-of-schools
         paragraph_range: [143, 147]
+        level: 3
       - title: The dignity of work at a time of digital transition
         slug: the-dignity-of-work-at-a-time-of-digital-transition
         paragraph_range: [131, 147]
+        level: 2
       - title: The value of work
         slug: the-value-of-work
         paragraph_range: [148, 150]
+        level: 3
       - title: The problem of unemployment
         slug: the-problem-of-unemployment
         paragraph_range: [151, 156]
+        level: 3
       - title: An economy that values dignity
         slug: an-economy-that-values-dignity
         paragraph_range: [157, 164]
+        level: 3
       - title: "Families and young people: the social conditions for hope"
         slug: families-and-young-people-the-social-conditions-for-hope
         paragraph_range: [165, 169]
+        level: 3
       - title: Protecting freedom against dependencies and commercialization
         slug: protecting-freedom-against-dependencies-and-commercialization
         paragraph_range: [131, 169]
+        level: 2
       - title: Dependencies and societal control
         slug: dependencies-and-societal-control
         paragraph_range: [170, 172]
+        level: 3
       - title: Breaking the chains of new forms of slavery
         slug: breaking-the-chains-of-new-forms-of-slavery
         paragraph_range: [173, 179]
+        level: 3
       - title: A shared responsibility
         slug: a-shared-responsibility
         paragraph_range: [180, 181]
+        level: 2
   - title: "Chapter Five: The Culture of Power and the Civilization of Love"
     slug: chapter-five-the-culture-of-power-and-the-civilization-of-love
     file: chapter-five-the-culture-of-power-and-the-civilization-of-love.yaml
@@ -190,51 +238,67 @@ sections:
       - title: The civilization of love in the digital age
         slug: the-civilization-of-love-in-the-digital-age
         paragraph_range: [186, 187]
+        level: 2
       - title: The culture of power
         slug: the-culture-of-power
         paragraph_range: [188, 188]
+        level: 2
       - title: The normalization of war
         slug: the-normalization-of-war
         paragraph_range: [189, 192]
+        level: 3
       - title: Force without limits
         slug: force-without-limits
         paragraph_range: [193, 196]
+        level: 3
       - title: Weapons and artificial intelligence
         slug: weapons-and-artificial-intelligence
         paragraph_range: [197, 200]
+        level: 3
       - title: The crisis of multilateralism
         slug: the-crisis-of-multilateralism
         paragraph_range: [201, 203]
+        level: 3
       - title: A supposed political realism
         slug: a-supposed-political-realism
         paragraph_range: [204, 209]
+        level: 3
       - title: Building the civilization of love
         slug: building-the-civilization-of-love
         paragraph_range: [210, 211]
+        level: 2
       - title: We can all do our part
         slug: we-can-all-do-our-part
         paragraph_range: [212, 213]
+        level: 3
       - title: The need to disarm words
         slug: the-need-to-disarm-words
         paragraph_range: [214, 214]
+        level: 3
       - title: Building peace through justice
         slug: building-peace-through-justice
         paragraph_range: [215, 215]
+        level: 3
       - title: Adopting the perspective of victims
         slug: adopting-the-perspective-of-victims
         paragraph_range: [216, 217]
+        level: 3
       - title: Cultivating a healthy realism
         slug: cultivating-a-healthy-realism
         paragraph_range: [218, 218]
+        level: 3
       - title: Reviving dialogue
         slug: reviving-dialogue
         paragraph_range: [219, 223]
+        level: 3
       - title: The necessity of diplomacy and multilateralism
         slug: the-necessity-of-diplomacy-and-multilateralism
         paragraph_range: [224, 227]
+        level: 3
       - title: Praying and hoping
         slug: praying-and-hoping
         paragraph_range: [228, 228]
+        level: 3
   - title: Conclusion
     slug: conclusion
     file: conclusion.yaml
@@ -244,12 +308,16 @@ sections:
       - title: The Word became flesh
         slug: the-word-became-flesh
         paragraph_range: [230, 233]
+        level: 2
       - title: One body in Christ
         slug: one-body-in-christ
         paragraph_range: [234, 235]
+        level: 2
       - title: The construction site of our time
         slug: the-construction-site-of-our-time
         paragraph_range: [236, 242]
+        level: 2
       - title: "The song of hope: the Magnificat"
         slug: the-song-of-hope-the-magnificat
         paragraph_range: [243, 245]
+        level: 2

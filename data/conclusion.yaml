@@ -12,7 +12,7 @@ blocks:
     footnote_refs: []
     enrichment: "This section proposes a Christian path through the digital age by focusing on God's plan, church unity, the common good, and prayer with Mary."
   - type: subheading
-    level: 3
+    level: 2
     title: The Word became flesh
     slug: the-word-became-flesh
   - type: paragraph
@@ -36,7 +36,7 @@ blocks:
     footnote_refs: [212]
     enrichment: "True human dignity lies in our ability to love and choose freely, something no machine can ever replace."
   - type: subheading
-    level: 3
+    level: 2
     title: One body in Christ
     slug: one-body-in-christ
   - type: paragraph
@@ -50,7 +50,7 @@ blocks:
     footnote_refs: [215, 216]
     enrichment: "The Eucharist calls us to justice and community, challenging the exclusion that technology can create."
   - type: subheading
-    level: 3
+    level: 2
     title: The construction site of our time
     slug: the-construction-site-of-our-time
   - type: paragraph
@@ -89,7 +89,7 @@ blocks:
     footnote_refs: []
     enrichment: "The vision of a renewed Jerusalem inspires us to overcome division and work together for a welcoming world."
   - type: subheading
-    level: 3
+    level: 2
     title: "The song of hope: the Magnificat"
     slug: the-song-of-hope-the-magnificat
   - type: paragraph

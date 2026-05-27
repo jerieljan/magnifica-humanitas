@@ -23,7 +23,7 @@ const currentSlug = currentPath.replace(/^\/|\/index\.html$|\/+$/g, '');
           {isActive && sec.subsections && sec.subsections.length > 0 && (
             <ul>
               {sec.subsections.map((sub) => (
-                <li class="subsection">
+                <li class={`subsection ${sub.level === 3 ? 'nested' : ''}`}>
                   <a href={`#${sub.slug}`}>{sub.title}</a>
                 </li>
               ))}

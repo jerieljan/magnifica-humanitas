@@ -10,7 +10,7 @@ blocks:
     level: 2
     title: Technology and Dominance.
   - type: subheading
-    level: 3
+    level: 2
     title: The Grandeur of Humanity in Light of the Promises of AI
     slug: the-grandeur-of-humanity-in-light-of-the-promises-of-ai
   - type: paragraph
@@ -24,7 +24,7 @@ blocks:
     footnote_refs: [118]
     enrichment: "Christians should not fear present challenges but embrace their responsibility to build a more humane and fraternal society."
   - type: subheading
-    level: 3
+    level: 2
     title: The technocratic paradigm and digital power
     slug: the-technocratic-paradigm-and-digital-power
   - type: paragraph
@@ -53,7 +53,7 @@ blocks:
     footnote_refs: []
     enrichment: "Catholic Social Doctrine principles should guide us in evaluating whether digital power truly serves participation, justice, and the common good."
   - type: subheading
-    level: 3
+    level: 2
     title: Artificial intelligence
     slug: artificial-intelligence
   - type: paragraph
@@ -140,7 +140,7 @@ blocks:
     footnote_refs: []
     enrichment: "AI developers carry a special ethical duty to embed values like transparency and responsibility into every design choice they make."
   - type: subheading
-    level: 3
+    level: 2
     title: What must not be lost
     slug: what-must-not-be-lost
   - type: paragraph
@@ -227,7 +227,7 @@ blocks:
     footnote_refs: []
     enrichment: "Just institutions and daily witness guide technology rightly; the true more than human is found in relationship, love, and God's grace."
   - type: subheading
-    level: 3
+    level: 2
     title: "The authentic “more than human”: grace and Christian humanism"
     slug: the-authentic-more-than-human-grace-and-christian-humanism
   - type: paragraph
@@ -241,7 +241,7 @@ blocks:
     footnote_refs: [137]
     enrichment: "Grace does not make us less human but more fully human, liberating us through relationship rather than enhanced self sufficiency or optimization."
   - type: subheading
-    level: 3
+    level: 2
     title: Two cities and two loves
     slug: two-cities-and-two-loves
   - type: paragraph

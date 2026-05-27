@@ -42,7 +42,13 @@ const paragraphNumbers = data.blocks
           </div>
         )}
         {block.type === 'subheading' && (
-          <h2 id={block.slug || `sub-${block.title}`}>{block.title}</h2>
+          <>
+            {block.level === 3 ? (
+              <h3 id={block.slug || `sub-${block.title}`}>{block.title}</h3>
+            ) : (
+              <h2 id={block.slug || `sub-${block.title}`}>{block.title}</h2>
+            )}
+          </>
         )}
         {block.type === 'paragraph' && (
           <ParagraphRow paragraph={block} allFootnotes={footnotes} />

@@ -137,6 +137,11 @@ a:hover {
   color: var(--color-muted);
 }
 
+.sidebar-nav .subsection.nested a {
+  padding-left: 1.75rem;
+  font-size: 0.78rem;
+}
+
 .sidebar-nav .subsection a:hover {
   color: var(--color-text);
 }

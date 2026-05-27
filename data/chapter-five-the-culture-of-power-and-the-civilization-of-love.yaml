@@ -30,7 +30,7 @@ blocks:
     footnote_refs: []
     enrichment: "A dangerous race for dominance is spreading conflict, yet many people are still quietly working to build peace through daily acts of care."
   - type: subheading
-    level: 3
+    level: 2
     title: The civilization of love in the digital age
     slug: the-civilization-of-love-in-the-digital-age
   - type: paragraph
@@ -44,7 +44,7 @@ blocks:
     footnote_refs: [179]
     enrichment: "Our digital connectedness should become a chosen solidarity that helps all people meet and care for one another across borders."
   - type: subheading
-    level: 3
+    level: 2
     title: The culture of power
     slug: the-culture-of-power
   - type: paragraph
@@ -178,7 +178,7 @@ blocks:
     footnote_refs: []
     enrichment: "Scientists and business leaders must look beyond their own work and ask whether their inventions could be misused to harm others."
   - type: subheading
-    level: 3
+    level: 2
     title: Building the civilization of love
     slug: building-the-civilization-of-love
   - type: paragraph

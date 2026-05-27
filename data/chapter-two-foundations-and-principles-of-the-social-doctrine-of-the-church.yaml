@@ -20,7 +20,7 @@ blocks:
     footnote_refs: []
     enrichment: "The Pope hopes believers will live out these principles daily and urges universities to apply them to the digital revolution."
   - type: subheading
-    level: 3
+    level: 2
     title: The foundations of Social Doctrine
     slug: the-foundations-of-social-doctrine
   - type: subheading
@@ -91,7 +91,7 @@ blocks:
     footnote_refs: []
     enrichment: "Big political movements mean nothing unless they actually help individual people and families live with dignity and rights."
   - type: subheading
-    level: 3
+    level: 2
     title: The principles of Social Doctrine
     slug: the-principles-of-social-doctrine
   - type: subheading
@@ -230,7 +230,7 @@ blocks:
     footnote_refs: [109]
     enrichment: "How a society treats migrants shows its real commitment to justice, so safe pathways and fixing root causes are both needed."
   - type: subheading
-    level: 3
+    level: 2
     title: Integral human development
     slug: integral-human-development
   - type: paragraph
@@ -254,7 +254,7 @@ blocks:
     footnote_refs: []
     enrichment: "New technology should be judged by whether it helps humanity grow in justice and fraternity rather than increasing inequality."
   - type: subheading
-    level: 3
+    level: 2
     title: An examen for the Church
     slug: an-examen-for-the-church
   - type: paragraph

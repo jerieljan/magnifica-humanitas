@@ -22,7 +22,7 @@ blocks:
     footnote_refs: [4]
     enrichment: "Pope Leo XIII began the Church's teaching on society long ago. That wisdom still helps us face today's problems with clarity and hope."
   - type: subheading
-    level: 3
+    level: 2
     title: The res novae of our time
     slug: the-res-novae-of-our-time
   - type: paragraph
@@ -41,7 +41,7 @@ blocks:
     footnote_refs: []
     enrichment: "Rather than just reacting to one crisis after another, we must ask deeper questions about where we are heading as a human family and what future we truly want."
   - type: subheading
-    level: 3
+    level: 2
     title: Two biblical images
     slug: two-biblical-images
   - type: paragraph
@@ -65,7 +65,7 @@ blocks:
     footnote_refs: []
     enrichment: "We must reject the idolatry of profit and forced sameness, and instead choose the path of working together, turning our differences into strengths through listening and dialogue."
   - type: subheading
-    level: 3
+    level: 2
     title: Building for the common good
     slug: building-for-the-common-good
   - type: paragraph
@@ -89,7 +89,7 @@ blocks:
     footnote_refs: []
     enrichment: "We need clear, hopeful words that shed light rather than cause fear. By holding to principles like human dignity and care for the poor, we can translate ideals into real daily practices."
   - type: subheading
-    level: 3
+    level: 2
     title: Remaining human
     slug: remaining-human
   - type: paragraph

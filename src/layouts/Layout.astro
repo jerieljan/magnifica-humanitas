@@ -26,11 +26,31 @@ const pageTitle = title ? `${title} — ${manifest.meta.title}` : manifest.meta.
       min-height: 100vh;
     }
     @media (max-width: 1024px) {
-      .page-container { grid-template-columns: 1fr; padding: 1rem; }
+      .page-container { grid-template-columns: 1fr; padding: 72px 1rem 1rem; }
     }
   </style>
 </head>
 <body>
+  {/* Mobile Header */}
+  <header class="mobile-header" id="mobile-header">
+    <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Open navigation" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <span class="mobile-header-title">{manifest.meta.title}</span>
+    <div style="width: 40px;"></div>
+  </header>
+
+  {/* Mobile Sidebar Overlay */}
+  <div class="mobile-sidebar-backdrop" id="mobile-sidebar-backdrop"></div>
+  <div class="mobile-sidebar" id="mobile-sidebar">
+    <div class="mobile-sidebar-header">
+      <button class="mobile-sidebar-close" id="mobile-sidebar-close" aria-label="Close navigation">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <Sidebar />
+  </div>
+
   <div class="page-container">
     <aside class="sidebar">
       <Sidebar />
@@ -40,8 +60,8 @@ const pageTitle = title ? `${title} — ${manifest.meta.title}` : manifest.meta.
     </main>
   </div>
 
-  {/* Mobile FAB */}
-  <button class="mobile-fab" id="mobile-fab" aria-label="Show paragraph summary">☰</button>
+  {/* Mobile FAB for summary */}
+  <button class="mobile-fab" id="mobile-fab" aria-label="Show paragraph summary">¶</button>
 
   {/* Mobile Drawer Backdrop */}
   <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop"></div>
@@ -54,6 +74,36 @@ const pageTitle = title ? `${title} — ${manifest.meta.title}` : manifest.meta.
   </div>
 
   <script>
+    // Mobile sidebar toggle
+    const navToggle = document.getElementById('mobile-nav-toggle');
+    const mobileSidebar = document.getElementById('mobile-sidebar');
+    const sidebarBackdrop = document.getElementById('mobile-sidebar-backdrop');
+    const sidebarClose = document.getElementById('mobile-sidebar-close');
+    let sidebarOpen = false;
+
+    function toggleSidebar() {
+      sidebarOpen = !sidebarOpen;
+      mobileSidebar.classList.toggle('open', sidebarOpen);
+      sidebarBackdrop.classList.toggle('open', sidebarOpen);
+      navToggle.setAttribute('aria-expanded', String(sidebarOpen));
+      if (sidebarOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+
+    navToggle.addEventListener('click', toggleSidebar);
+    sidebarBackdrop.addEventListener('click', toggleSidebar);
+    sidebarClose.addEventListener('click', toggleSidebar);
+
+    // Close sidebar when a navigation link is clicked
+    mobileSidebar.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (sidebarOpen) toggleSidebar();
+      });
+    });
+
     // Mobile drawer toggle
     const fab = document.getElementById('mobile-fab');
     const drawer = document.getElementById('mobile-drawer');

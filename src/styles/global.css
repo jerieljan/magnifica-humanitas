@@ -322,6 +322,109 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Mobile Header */
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 110;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.mobile-nav-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  color: var(--color-accent);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.mobile-nav-toggle:hover {
+  background: var(--color-light);
+}
+
+.mobile-header-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-accent);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60vw;
+}
+
+/* Mobile Sidebar */
+.mobile-sidebar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 280px;
+  max-width: 85vw;
+  background: white;
+  border-right: 1px solid var(--color-border);
+  z-index: 160;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  padding: 1rem 1.5rem 2rem;
+}
+
+.mobile-sidebar.open {
+  transform: translateX(0);
+}
+
+.mobile-sidebar-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.mobile-sidebar-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  color: var(--color-accent);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.mobile-sidebar-close:hover {
+  background: var(--color-light);
+}
+
+.mobile-sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 155;
+}
+
+.mobile-sidebar-backdrop.open {
+  display: block;
+}
+
 /* Mobile Drawer & FAB */
 .mobile-fab {
   display: none;
@@ -459,11 +562,19 @@ body {
   .page-container {
     grid-template-columns: 1fr;
     gap: 1rem;
-    padding: 1rem;
+    padding: 72px 1rem 1rem;
   }
 
   .sidebar {
     display: none;
+  }
+
+  .mobile-header {
+    display: flex;
+  }
+
+  .mobile-sidebar {
+    display: block;
   }
 
   .paragraph-row {

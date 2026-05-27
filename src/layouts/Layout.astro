@@ -37,7 +37,11 @@ const pageTitle = title ? `${title} — ${manifest.meta.title}` : manifest.meta.
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
     </button>
     <span class="mobile-header-title">{manifest.meta.title}</span>
-    <div style="width: 40px;"></div>
+    <button class="mobile-summary-toggle" id="mobile-summary-toggle" aria-label="Show paragraph summary" aria-expanded="false">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+        <path d="M15 19c1.2-3.678 2.526-5.005 6-6c-3.474-.995-4.8-2.322-6-6c-1.2 3.678-2.526 5.005-6 6c3.474.995 4.8 2.322 6 6Zm-8-9c.6-1.84 1.263-2.503 3-3c-1.737-.497-2.4-1.16-3-3c-.6 1.84-1.263 2.503-3 3c1.737.497 2.4 1.16 3 3Zm1.5 10c.3-.92.631-1.251 1.5-1.5c-.869-.249-1.2-.58-1.5-1.5c-.3.92-.631 1.251-1.5 1.5c.869.249 1.2.58 1.5 1.5Z"/>
+      </svg>
+    </button>
   </header>
 
   {/* Mobile Sidebar Overlay */}
@@ -52,25 +56,17 @@ const pageTitle = title ? `${title} — ${manifest.meta.title}` : manifest.meta.
   </div>
 
   <div class="page-container">
+    <div class="mobile-summary-panel" id="mobile-summary-panel">
+      <div id="mobile-summary-content">
+        <p class="enrichment-placeholder">Select a paragraph to see its summary.</p>
+      </div>
+    </div>
     <aside class="sidebar">
       <Sidebar />
     </aside>
     <main class="main-content" id="main-content">
       <slot />
     </main>
-  </div>
-
-  {/* Mobile FAB for summary */}
-  <button class="mobile-fab" id="mobile-fab" aria-label="Show paragraph summary">¶</button>
-
-  {/* Mobile Drawer Backdrop */}
-  <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop"></div>
-
-  {/* Mobile Drawer */}
-  <div class="mobile-drawer" id="mobile-drawer">
-    <div id="mobile-drawer-content">
-      <p class="enrichment-placeholder">Select a paragraph to see its summary.</p>
-    </div>
   </div>
 
   <script>
@@ -104,27 +100,26 @@ const pageTitle = title ? `${title} — ${manifest.meta.title}` : manifest.meta.
       });
     });
 
-    // Mobile drawer toggle
-    const fab = document.getElementById('mobile-fab');
-    const drawer = document.getElementById('mobile-drawer');
-    const backdrop = document.getElementById('mobile-drawer-backdrop');
-    let drawerOpen = false;
+    // Mobile summary panel toggle
+    const summaryToggle = document.getElementById('mobile-summary-toggle');
+    const summaryPanel = document.getElementById('mobile-summary-panel');
+    let summaryOpen = false;
 
-    function toggleDrawer() {
-      drawerOpen = !drawerOpen;
-      drawer.classList.toggle('open', drawerOpen);
-      backdrop.classList.toggle('open', drawerOpen);
+    function toggleSummary() {
+      summaryOpen = !summaryOpen;
+      summaryPanel.classList.toggle('open', summaryOpen);
+      summaryToggle.classList.toggle('active', summaryOpen);
+      summaryToggle.setAttribute('aria-expanded', String(summaryOpen));
     }
 
-    fab.addEventListener('click', toggleDrawer);
-    backdrop.addEventListener('click', toggleDrawer);
+    summaryToggle.addEventListener('click', toggleSummary);
 
-    // IntersectionObserver to update active paragraph in scrubber and mobile drawer
+    // IntersectionObserver to update active paragraph in scrubber and mobile summary panel
     const observerOptions = { rootMargin: '-20% 0px -60% 0px', threshold: 0 };
     const paragraphs = document.querySelectorAll('.paragraph-row');
     const scrubberLinks = document.querySelectorAll('.paragraph-scrubber .scrubber-link');
     const scrubberProgress = document.getElementById('scrubber-progress');
-    const drawerContent = document.getElementById('mobile-drawer-content');
+    const summaryContent = document.getElementById('mobile-summary-content');
 
     let activeId = null;
     const totalParagraphs = paragraphs.length;
@@ -152,15 +147,15 @@ const pageTitle = title ? `${title} — ${manifest.meta.title}` : manifest.meta.
             activeLink.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
           }
 
-          // Update mobile drawer
+          // Update mobile summary panel
           const enrichment = entry.target.querySelector('.enrichment-card');
-          if (drawerContent && enrichment) {
-            drawerContent.innerHTML = enrichment.innerHTML;
+          if (summaryContent && enrichment) {
+            summaryContent.innerHTML = enrichment.innerHTML;
             const num = entry.target.querySelector('.para-number')?.textContent || '';
             const pre = document.createElement('div');
             pre.style.cssText = 'font-weight:700;color:#2c3e50;margin-bottom:0.5rem;font-size:0.85rem;';
             pre.textContent = 'Paragraph ' + num.replace('.', '');
-            drawerContent.prepend(pre);
+            summaryContent.prepend(pre);
           }
         }
       });

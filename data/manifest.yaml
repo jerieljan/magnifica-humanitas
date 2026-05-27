@@ -7,7 +7,7 @@ meta:
   source: "https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html"
   total_paragraphs: 245
 sections:
-  - title: INTRODUCTION
+  - title: Introduction
     slug: introduction
     file: introduction.yaml
     order: 1
@@ -25,7 +25,7 @@ sections:
       - title: Remaining human
         slug: remaining-human
         paragraph_range: [15, 16]
-  - title: "CHAPTER ONE: A DYNAMIC APPROACH FAITHFUL TO THE GOSPEL"
+  - title: "Chapter One: A Dynamic Approach Faithful to the Gospel"
     slug: chapter-one-a-dynamic-approach-faithful-to-the-gospel
     file: chapter-one-a-dynamic-approach-faithful-to-the-gospel.yaml
     order: 2
@@ -49,7 +49,7 @@ sections:
       - title: Interpreting history in the light of faith
         slug: interpreting-history-in-the-light-of-faith
         paragraph_range: [45, 45]
-  - title: "CHAPTER TWO: FOUNDATIONS AND PRINCIPLES OF THE SOCIAL DOCTRINE OF THE CHURCH"
+  - title: "Chapter Two: Foundations and Principles of the Social Doctrine of the Church"
     slug: chapter-two-foundations-and-principles-of-the-social-doctrine-of-the-church
     file: chapter-two-foundations-and-principles-of-the-social-doctrine-of-the-church.yaml
     order: 3
@@ -91,13 +91,13 @@ sections:
       - title: An examen for the Church
         slug: an-examen-for-the-church
         paragraph_range: [86, 89]
-  - title: "CHAPTER THREE: TECHNOLOGY AND DOMINANCE."
+  - title: "Chapter Three: Technology and Dominance."
     slug: chapter-three-technology-and-dominance
     file: chapter-three-technology-and-dominance.yaml
     order: 4
     paragraph_range: [90, 130]
     subsections:
-      - title: THE GRANDEUR OF HUMANITY IN LIGHT OF THE PROMISES OF AI
+      - title: The Grandeur of Humanity in Light of the Promises of AI
         slug: the-grandeur-of-humanity-in-light-of-the-promises-of-ai
         paragraph_range: [90, 91]
       - title: The technocratic paradigm and digital power
@@ -127,13 +127,13 @@ sections:
       - title: Two cities and two loves
         slug: two-cities-and-two-loves
         paragraph_range: [129, 130]
-  - title: "CHAPTER FOUR: SAFEGUARDING HUMANITY AT A TIME OF TRANSFORMATION."
+  - title: "Chapter Four: Safeguarding Humanity at a Time of Transformation."
     slug: chapter-four-safeguarding-humanity-at-a-time-of-transformation
     file: chapter-four-safeguarding-humanity-at-a-time-of-transformation.yaml
     order: 5
     paragraph_range: [131, 181]
     subsections:
-      - title: TRUTH, WORK, FREEDOM
+      - title: Truth, Work, Freedom
         slug: truth-work-freedom
         paragraph_range: [131, 131]
       - title: Truth as a common good
@@ -181,7 +181,7 @@ sections:
       - title: A shared responsibility
         slug: a-shared-responsibility
         paragraph_range: [180, 181]
-  - title: "CHAPTER FIVE: THE CULTURE OF POWER AND THE CIVILIZATION OF LOVE"
+  - title: "Chapter Five: The Culture of Power and the Civilization of Love"
     slug: chapter-five-the-culture-of-power-and-the-civilization-of-love
     file: chapter-five-the-culture-of-power-and-the-civilization-of-love.yaml
     order: 6
@@ -235,7 +235,7 @@ sections:
       - title: Praying and hoping
         slug: praying-and-hoping
         paragraph_range: [228, 228]
-  - title: CONCLUSION
+  - title: Conclusion
     slug: conclusion
     file: conclusion.yaml
     order: 7

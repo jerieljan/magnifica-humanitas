@@ -35,7 +35,7 @@ const pageTitle = title ? `${title} — ${manifest.meta.title}` : manifest.meta.
     <aside class="sidebar">
       <Sidebar />
     </aside>
-    <main class="main-content">
+    <main class="main-content" id="main-content">
       <slot />
     </main>
   </div>
@@ -69,22 +69,39 @@ const pageTitle = title ? `${title} — ${manifest.meta.title}` : manifest.meta.
     fab.addEventListener('click', toggleDrawer);
     backdrop.addEventListener('click', toggleDrawer);
 
-    // IntersectionObserver to update active paragraph in sidebar and mobile drawer
+    // IntersectionObserver to update active paragraph in scrubber and mobile drawer
     const observerOptions = { rootMargin: '-20% 0px -60% 0px', threshold: 0 };
     const paragraphs = document.querySelectorAll('.paragraph-row');
-    const sidebarParaLinks = document.querySelectorAll('.sidebar-nav .paragraph-grid a');
+    const scrubberLinks = document.querySelectorAll('.paragraph-scrubber .scrubber-link');
+    const scrubberProgress = document.getElementById('scrubber-progress');
     const drawerContent = document.getElementById('mobile-drawer-content');
 
     let activeId = null;
+    const totalParagraphs = paragraphs.length;
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           activeId = entry.target.id;
-          // Update sidebar
-          sidebarParaLinks.forEach((a) => {
+          const paraNum = parseInt(activeId.replace('para-', ''), 10);
+
+          // Update scrubber active state
+          scrubberLinks.forEach((a) => {
             a.classList.toggle('active-para', a.getAttribute('href') === '#' + activeId);
           });
+
+          // Update progress bar
+          if (scrubberProgress && totalParagraphs > 0) {
+            const progress = ((Array.from(paragraphs).findIndex(p => p.id === activeId) + 1) / totalParagraphs) * 100;
+            scrubberProgress.style.width = progress + '%';
+          }
+
+          // Scroll active scrubber link into view
+          const activeLink = document.querySelector('.paragraph-scrubber .scrubber-link.active-para');
+          if (activeLink) {
+            activeLink.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          }
+
           // Update mobile drawer
           const enrichment = entry.target.querySelector('.enrichment-card');
           if (drawerContent && enrichment) {

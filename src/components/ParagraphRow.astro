@@ -18,7 +18,7 @@ contentHtml = contentHtml.replace(/\[\^(\d+)\]/g, (match, id) => {
   return `<a href="#footnote-${id}" class="footnote-ref">${match}${popupHtml}</a>`;
 });
 
-const hasEnrichment = paragraph.enrichment && Object.keys(paragraph.enrichment).length > 0;
+const hasEnrichment = paragraph.enrichment && typeof paragraph.enrichment === 'string' && paragraph.enrichment.length > 0;
 ---
 
 <div class="paragraph-row" id={`para-${paragraph.number}`}>
@@ -31,7 +31,7 @@ const hasEnrichment = paragraph.enrichment && Object.keys(paragraph.enrichment).
   <div class="paragraph-enrichment">
     <div class="enrichment-card">
       {hasEnrichment ? (
-        <div set:html={marked.parseInline(JSON.stringify(paragraph.enrichment))} />
+        <div set:html={marked.parseInline(paragraph.enrichment)} />
       ) : (
         <span class="enrichment-placeholder">Summary will appear here.</span>
       )}

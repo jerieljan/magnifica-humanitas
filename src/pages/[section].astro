@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ParagraphRow from '../components/ParagraphRow.astro';
+import ParagraphScrubber from '../components/ParagraphScrubber.astro';
 import { getManifest, getSection, getFootnotes } from '../lib/data.js';
 import { marked } from 'marked';
 
@@ -25,6 +26,10 @@ const sectionFootnoteIds = [
   ),
 ];
 const sectionFootnotes = footnotes.filter((f) => sectionFootnoteIds.includes(f.id));
+
+const paragraphNumbers = data.blocks
+  .filter((b) => b.type === 'paragraph')
+  .map((b) => b.number);
 ---
 
 <Layout title={data.title}>
@@ -60,4 +65,6 @@ const sectionFootnotes = footnotes.filter((f) => sectionFootnoteIds.includes(f.i
       </div>
     )}
   </article>
+
+  <ParagraphScrubber paragraphs={paragraphNumbers} />
 </Layout>

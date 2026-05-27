@@ -1,0 +1,21 @@
+---
+const { paragraphs } = Astro.props;
+---
+
+{paragraphs.length > 0 && (
+  <nav class="paragraph-scrubber" aria-label="Paragraph navigation">
+    <div class="scrubber-track">
+      {paragraphs.map((num) => (
+        <a
+          href={`#para-${num}`}
+          class="scrubber-link"
+          data-para={num}
+          title={`Paragraph ${num}`}
+        >
+          {num}
+        </a>
+      ))}
+    </div>
+    <div class="scrubber-progress" id="scrubber-progress"></div>
+  </nav>
+)}

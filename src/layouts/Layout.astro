@@ -13,7 +13,19 @@ const pageTitle = title ? `${title} — ${manifest.meta.title}` : manifest.meta.
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={manifest.meta.subtitle} />
+  <meta name="theme-color" content="#2c3e50" />
   <title>{pageTitle}</title>
+  <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site || 'https://example.com').href} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={manifest.meta.subtitle} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site || 'https://example.com').href} />
+  <meta property="og:site_name" content={manifest.meta.title} />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={manifest.meta.subtitle} />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">

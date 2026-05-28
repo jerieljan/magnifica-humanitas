@@ -63,7 +63,7 @@ The `enrichment:` field on every paragraph is intentionally left empty. It is de
 
 ## Tech Stack
 
-- [Astro](https://astro.build/) v4.14 — static site generator
+- [Astro](https://astro.build/) v6 — static site generator
 - [js-yaml](https://github.com/nodeca/js-yaml) — YAML parsing
 - [marked](https://marked.js.org/) — Markdown rendering
 - [Bun](https://bun.sh/) — package manager and runtime

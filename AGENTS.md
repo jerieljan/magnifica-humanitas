@@ -12,7 +12,7 @@ An Astro static site that presents Pope Leo XIV's encyclical *Magnifica Humanita
   - `bun run dev` — start Astro dev server
   - `bun run build` — static build to `dist/`
   - `bun run preview` — preview production build
-- **Deployment:** Vercel, Astro default static output. The `dist/` directory is the deploy artifact.
+- **Deployment:** Vercel, Astro v6 default static output. The `dist/` directory is the deploy artifact.
 - **Do not commit `node_modules/`, `dist/`, or `.astro/`.** These are already in `.gitignore`.
 
 ## Project Structure
@@ -26,6 +26,7 @@ src/
     index.astro    # Homepage / landing
     [section].astro  # Dynamic route for each YAML section
     footnotes.astro  # Dedicated footnotes page
+    404.astro      # Custom error page
   components/
     Sidebar.astro           # Left navigation panel
     ParagraphRow.astro      # Single paragraph + enrichment pane
@@ -34,8 +35,9 @@ src/
     data.js        # YAML loading helpers, manifest parsing
   styles/
     global.css     # Tailwind/custom styles, EB Garamond typography
-public/            # Static assets (images, favicon)
+public/            # Static assets (images, favicon, robots.txt)
 split.py          # One-off script used to generate YAML from raw source
+vercel.json       # Vercel deployment config (headers, redirects)
 ```
 
 ## Data Conventions

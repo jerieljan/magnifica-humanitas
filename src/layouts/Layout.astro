@@ -139,45 +139,51 @@ const pageTitle = title ? `${title} — ${manifest.meta.title}` : manifest.meta.
       });
     });
 
-    // Mobile summary panel toggle
+    // Shared enrichment visibility state (desktop + mobile)
+    const STORAGE_KEY = 'enrichment-visible';
+    const mainContent = document.getElementById('main-content');
+    const desktopToggle = document.getElementById('desktop-enrichment-toggle');
     const summaryToggle = document.getElementById('mobile-summary-toggle');
     const summaryPanel = document.getElementById('mobile-summary-panel');
-    let summaryOpen = false;
+    let enrichmentVisible = localStorage.getItem(STORAGE_KEY) === 'true';
 
-    function toggleSummary() {
-      summaryOpen = !summaryOpen;
-      summaryPanel.classList.toggle('open', summaryOpen);
-      summaryToggle.classList.toggle('active', summaryOpen);
-      summaryToggle.setAttribute('aria-expanded', String(summaryOpen));
-    }
-
-    summaryToggle.addEventListener('click', toggleSummary);
-
-    // Desktop enrichment toggle
-    const desktopToggle = document.getElementById('desktop-enrichment-toggle');
-    const mainContent = document.getElementById('main-content');
-    let desktopEnrichmentOpen = localStorage.getItem('desktop-enrichment-open') === 'true';
-
-    function updateDesktopEnrichment() {
+    function updateEnrichmentState() {
+      // Desktop: toggle the right-hand enrichment pane
       if (mainContent) {
-        mainContent.classList.toggle('enrichments-visible', desktopEnrichmentOpen);
+        mainContent.classList.toggle('enrichments-visible', enrichmentVisible);
       }
       if (desktopToggle) {
-        desktopToggle.classList.toggle('active', desktopEnrichmentOpen);
-        desktopToggle.setAttribute('aria-expanded', String(desktopEnrichmentOpen));
+        desktopToggle.classList.toggle('active', enrichmentVisible);
+        desktopToggle.setAttribute('aria-expanded', String(enrichmentVisible));
+      }
+      // Mobile: toggle the bottom summary panel
+      if (summaryPanel) {
+        summaryPanel.classList.toggle('open', enrichmentVisible);
+      }
+      if (summaryToggle) {
+        summaryToggle.classList.toggle('active', enrichmentVisible);
+        summaryToggle.setAttribute('aria-expanded', String(enrichmentVisible));
       }
     }
 
     if (desktopToggle) {
       desktopToggle.addEventListener('click', () => {
-        desktopEnrichmentOpen = !desktopEnrichmentOpen;
-        localStorage.setItem('desktop-enrichment-open', String(desktopEnrichmentOpen));
-        updateDesktopEnrichment();
+        enrichmentVisible = !enrichmentVisible;
+        localStorage.setItem(STORAGE_KEY, String(enrichmentVisible));
+        updateEnrichmentState();
       });
-
-      // Initialize on load
-      updateDesktopEnrichment();
     }
+
+    if (summaryToggle) {
+      summaryToggle.addEventListener('click', () => {
+        enrichmentVisible = !enrichmentVisible;
+        localStorage.setItem(STORAGE_KEY, String(enrichmentVisible));
+        updateEnrichmentState();
+      });
+    }
+
+    // Initialize on load
+    updateEnrichmentState();
 
     // IntersectionObserver to update active paragraph in scrubber and mobile summary panel
     const observerOptions = { rootMargin: '-20% 0px -60% 0px', threshold: 0 };
